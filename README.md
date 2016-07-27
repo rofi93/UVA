@@ -1,1 +1,1 @@
-# UVA
+# all my accepted codes of solved problems of uva
