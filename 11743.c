@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int a[4],b[4],c[4],n,t,i,j,m,rem,num,r,k;
+
+    scanf("%d",&t);
+    while(t--)
+    {
+        for(i=0;i<4;i++)
+        {
+            scanf("%d",&a[i]);
+        }
+        m=n=r=0;
+        for(i=0;i<4;i++)
+        {
+            num=a[i];
+            for(j=0;j<2;j++)
+            {
+                m+=num%10;
+                num=num/10;
+                rem=(num%10)*2;
+                if(rem>9)
+                {
+                    for(k=1;k<=2;k++)
+                    {
+                        n+=rem%10;
+                        rem=rem/10;
+                    }
+                }
+                else
+                {
+                    n+=rem;
+                }
+                num=num/10;
+            }
+        }
+        r=n+m;
+        if(r%10==0)
+        {
+            printf("Valid\n");
+        }
+        else
+        {
+            printf("Invalid\n");
+        }
+    }
+    return 0;
+}
